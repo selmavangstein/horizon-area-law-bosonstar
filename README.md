@@ -99,8 +99,7 @@ The two files are needed for different reasons:
 
 The boson-star waveform `GRChombo_BBSsol02_A17A17q100d17p000_Res40.h5` comes from the
 simulation catalogue of [Evstafyeva et al. (2024)](https://doi.org/10.1103/PhysRevLett.133.131401)
-and is not redistributed here. Contact the authors of that paper, then place the file in `external/`.
-See [external/README.md](external/README.md).
+and can be found at the accompanying [GitHub respository](https://github.com/tamaraevst/Boson-star-waveforms)
 
 ## The analysis pipeline
 
