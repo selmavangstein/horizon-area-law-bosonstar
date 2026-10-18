@@ -1,0 +1,22 @@
+# Tested with Python 3.11 on Linux. Pinned versions are those used for the paper;
+# pandas and h5py are lower bounds because tdinf requires newer releases.
+numpy==2.2.6
+scipy==1.15.0
+matplotlib==3.10.7
+seaborn==0.13.2
+pandas>=2.3.0
+h5py>=3.14.0
+lalsuite==7.26.1
+bilby==2.7.1
+gwpy==3.0.13
+emcee==3.1.6
+qnm==0.4.4
+jax==0.4.38
+jaxlib==0.4.38
+numpyro==0.19.0
+arviz==0.19.0
+xarray==2025.10.1
+h5netcdf==1.7.3
+# ringdown and tdinf at the commits used for the paper
+ringdown @ git+https://github.com/maxisi/ringdown.git@090b7e3d0ba31692cff75ae379d666273d8917fa
+tdinf @ git+https://github.com/simonajmiller/tdinf.git@8ded40ecda2c74311cf4da21e0cdaeba808cfbda

@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# separately downloaded inputs (see external/README.md)
+external/*
+!external/README.md
+
+# products of rerunning the pipeline
+output/
+
+# paper draft (never commit)
+*.pdf
+!figures/*.pdf
+*:Zone.Identifier
+
+# local extras, not part of the paper
+extra_inspiral_spins.py
+figures/extra_inspiral_spins.pdf
