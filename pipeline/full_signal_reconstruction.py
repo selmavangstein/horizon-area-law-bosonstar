@@ -2,7 +2,7 @@
 
 Evaluates NRSur7dq4, projected onto H1 and L1, for posterior draws from the
 full-signal TDInf run. The data are conditioned exactly as in the inference, and
-the script saves the posterior median and 25-75% band alongside the conditioned
+the script saves the posterior median and the 5, 25, 75 and 95% percentiles alongside the conditioned
 zero-noise injection. The output is data/derived/full_signal_reconstruction.npz,
 which makefig5.py reads.
 
@@ -138,11 +138,12 @@ def main():
 
     out = {"ifos": np.asarray(IFOS), "n_draws": np.asarray(n)}
     for ifo in IFOS:
-        q25, q50, q75 = np.percentile(stacks[ifo], [25, 50, 75], axis=0)
+        q05, q25, q50, q75, q95 = np.percentile(stacks[ifo], [5, 25, 50, 75, 95], axis=0)
         out[f"{ifo}_t_rel"] = np.asarray(time_dict[ifo]) - float(meta[f"{ifo.lower()}_arrival_time"])
         out[f"{ifo}_data"] = np.asarray(noisy[ifo], dtype=float)
         out[f"{ifo}_clean"] = np.asarray(clean[ifo], dtype=float)
-        out[f"{ifo}_q25"], out[f"{ifo}_q50"], out[f"{ifo}_q75"] = q25, q50, q75
+        for name, q in (("q05", q05), ("q25", q25), ("q50", q50), ("q75", q75), ("q95", q95)):
+            out[f"{ifo}_{name}"] = q
     args_cli.out.parent.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(args_cli.out, **out)
     print(f"wrote {args_cli.out}")

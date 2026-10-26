@@ -1,7 +1,7 @@
 """Fig. S1: full-signal (inspiral-merger-ringdown) waveform reconstruction in L1.
 
 Red: conditioned zero-noise boson-star injection. Blue: posterior median NRSur7dq4
-reconstruction from the full-signal analysis, with the 25-75% band. The inset
+reconstruction from the full-signal analysis, with the 90% (5-95%) band. The inset
 zooms in on the merger.
 
 Reads data/derived/full_signal_reconstruction.npz, which is produced by
@@ -24,12 +24,12 @@ INJECTION_COLOR = plotting.COLORS["bs"]
 
 
 def draw(ax, r, lw_scale=1.0, label=True):
-    """Draw the clean injection, the posterior median and the 25-75% band on ax."""
+    """Draw the clean injection, the posterior median and the 90% (5-95%) band on ax."""
     t = 1e3 * r[f"{IFO}_t_rel"]
     ax.plot(t, r[f"{IFO}_clean"] / SCALE, lw=1.0 * lw_scale, color=INJECTION_COLOR,
             label="Clean injection" if label else None)
-    ax.fill_between(t, r[f"{IFO}_q25"] / SCALE, r[f"{IFO}_q75"] / SCALE, color=COLOR, alpha=0.3, lw=0, zorder=1,
-                    label="Posterior 25-75%" if label else None)
+    ax.fill_between(t, r[f"{IFO}_q05"] / SCALE, r[f"{IFO}_q95"] / SCALE, color=COLOR, alpha=0.3, lw=0, zorder=1,
+                    label="Posterior 90%" if label else None)
     ax.plot(t, r[f"{IFO}_q50"] / SCALE, lw=0.7 * lw_scale, color=COLOR, zorder=2,
             label="Posterior median" if label else None)
 
@@ -38,7 +38,7 @@ def visible_range(r, xlim):
     """Smallest and largest plotted strain (in units of SCALE) within xlim [ms]."""
     t = 1e3 * r[f"{IFO}_t_rel"]
     sel = (t >= xlim[0]) & (t <= xlim[1])
-    values = np.concatenate([r[f"{IFO}_{k}"][sel] for k in ("clean", "q25", "q50", "q75")]) / SCALE
+    values = np.concatenate([r[f"{IFO}_{k}"][sel] for k in ("clean", "q05", "q50", "q95")]) / SCALE
     return values.min(), values.max()
 
 

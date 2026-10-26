@@ -81,7 +81,7 @@ def main():
     ax_d.annotate("True value (BS binary)", xy=(1.0, 0.5), xycoords=("data", "axes fraction"),
                   xytext=(-3, 0), textcoords="offset points", ha="right", va="center", rotation=90,
                   fontsize=plotting.LEGEND_SIZE)
-    ax_d.set_xlabel(r"$\Delta A = (A_{\mathrm{f}} - A_{\mathrm{i}})/(A_{\mathrm{f}})$")
+    ax_d.set_xlabel(r"$\Delta A = (A_{\mathrm{f}} - A_{\mathrm{i}})/A_{\mathrm{f}}$")
     legend_d = ax_d.legend(loc="upper left", title=r"$t_<\,[T_M] \rightarrow t_>\,[T_{M_f}]$",
                            title_fontsize=plotting.LEGEND_SIZE, **LEGEND)
 
