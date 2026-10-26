@@ -138,9 +138,6 @@ Notes on reproducibility:
   - Each fit uses 0.2 s of data from t_>.
   - T_Mf = 0.337 ms and T_M = 0.354 ms, following Abac et al. (2025).
 
-The full emcee chains and `ringdown` result files are archived on Zenodo:
-**DOI 10.5281/zenodo.XXXXXXX (to be added)**.
-
 ## Citation
 
 If you use this code or data, please cite the paper (BibTeX to be added on publication).

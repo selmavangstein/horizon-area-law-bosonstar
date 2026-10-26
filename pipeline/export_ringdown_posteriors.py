@@ -1,7 +1,7 @@
 """Compress the ringdown start-time sweep into data/ringdown/ringdown_posteriors.h5.
 
-The full `ringdown` result files (one netCDF per fit, ~1.6 GB in total, mostly
-reconstructed waveforms) are archived on Zenodo. This keeps only the scalar
+The full `ringdown` result files contains one netCDF per fit, ~1.6 GB in total, mostly
+reconstructed waveforms. This keeps only the scalar
 posterior variables listed in KEEP (remnant mass and spin; mode amplitudes,
 frequencies and damping rates), flattened over chains, which is all the figures need.
 

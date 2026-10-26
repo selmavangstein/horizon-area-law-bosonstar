@@ -47,8 +47,3 @@ Produced by `pipeline/export_ringdown_posteriors.py`.
 ## `derived/`
 - `full_signal_reconstruction.npz`: waveform reconstruction for Fig. S1, made by `pipeline/full_signal_reconstruction.py`
 - `area_law_significance.csv` and `area_summary.csv`: area-law test results, made by `pipeline/area_law_test.py`
-
-## Not included (Zenodo)
-The full sampler outputs are archived on Zenodo at **[DOI: 10.5281/zenodo.XXXXXXX — to be added]**:
-- the emcee backends of the TDInf runs, including full chains for convergence checks
-- the complete `ringdown` netCDF result files (~1.6 GB), which include reconstructed waveforms
