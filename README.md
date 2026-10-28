@@ -2,7 +2,7 @@
 
 Code and data for
 
-> S. Vangstein and C. J. Moore, *On the Interpretation of Tests of the Horizon Area Law* (2026), submitted to Phys. Rev. Lett.
+> S. Vangstein and C. J. Moore, *On the Interpretation of Tests of the Horizon Area Law*, [arXiv:2610.36162](https://arxiv.org/abs/2610.36162) (2026), submitted to Phys. Rev. Lett.
 
 ## About the paper
 
@@ -140,7 +140,20 @@ Notes on reproducibility:
 
 ## Citation
 
-If you use this code or data, please cite the paper (BibTeX to be added on publication).
+If you use this code or data, please cite the paper:
+
+```bibtex
+@article{Vangstein:2026,
+    author        = {Vangstein, Selma and Moore, Christopher J.},
+    title         = {{On the Interpretation of Tests of the Horizon Area Law}},
+    year          = {2026},
+    eprint        = {2610.36162},
+    archivePrefix = {arXiv},
+    primaryClass  = {gr-qc},
+    doi           = {10.48550/arXiv.2610.36162}
+}
+```
+
 Please also cite the software it builds on:
 - [bilby](https://github.com/bilby-dev/bilby)
 - [TDInf](https://github.com/simonajmiller/tdinf)
